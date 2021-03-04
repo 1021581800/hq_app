@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% load staticfiles %}
+{% block title%}
+我的网站 | 首页
+{% endblock%}
+
+
+{% block content %}
+<h3>我的网站，随便看</h3>
+
+{{read_nums}}
+<hr>
+{{dates}}
+{% endblock  %}
