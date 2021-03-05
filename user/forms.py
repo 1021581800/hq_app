@@ -21,24 +21,29 @@ class LoginForm(forms.Form):
 
 class RegForm(forms.Form):
     username = forms.CharField(label='这是用户名',
+
                                widget=forms.TextInput(attrs={'class': 'fom-control', 'placeholder': '没输入用户名'}))
-    email = forms.EmailField(label='这你的邮箱',
-                               widget=forms.TextInput(attrs={'class': 'fom-control', 'placeholder': '没邮箱'}))
-    password = forms.CharField(label='这你的邮箱',
-                               widget=forms.TextInput(attrs={'class': 'fom-control', 'placeholder': '没输入密码'}))
-    password_again = forms.CharField(label='这你的邮箱',
-                               widget=forms.TextInput(attrs={'class': 'fom-control', 'placeholder': '没再一次没输入密码'}))
+    password = forms.CharField(
+        label='密码',
+        min_length=6,
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '请输入密码'})
+    )
+    password_again = forms.CharField(
+        label='再输入一次密码',
+        min_length=6,
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '再输入一次密码'})
+    )
 
     def clean_username(self):
         username = self.cleaned_data['username']
         if User.objects.filter(username=username).exists():
             raise forms.ValidationError('用户名已存在')
         return username
-    def clean_email(self):
-        email = self.cleaned_data['email']
-        if User.objects.filter(email=email).exists():
-            raise forms.ValidationError('email已存在')
-        return email
+    # def clean_email(self):
+    #     email = self.cleaned_data['email']
+    #     if User.objects.filter(email=email).exists():
+    #         raise forms.ValidationError('email已存在')
+    #     return email
     def clean_password_again(self):
         password = self.cleaned_data['password']
         password_again = self.cleaned_data['password_again']
