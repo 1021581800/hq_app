@@ -154,6 +154,7 @@ CKEDITOR_UPLOAD_PATH = 'upload/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.qq.com'
+
 EMAIL_PORT = 465
 EMAIL_HOST_USER = '1021581800@qq.com'
 EMAIL_HOST_PASSWORD = 'lmxlvkihshmsbcgi'  # 授权码
