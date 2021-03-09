@@ -21,7 +21,6 @@ class LoginForm(forms.Form):
 
 class RegForm(forms.Form):
     username = forms.CharField(label='这是用户名',
-
                                widget=forms.TextInput(attrs={'class': 'fom-control', 'placeholder': '没输入用户名'}))
     password = forms.CharField(
         label='密码',

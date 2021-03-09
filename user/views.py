@@ -60,7 +60,7 @@ def register(request):
             password = register_form.cleaned_data['password']
 
             #创建用户
-            user = User.objects.create_user(username,'',password)
+            user = User.objects.create_user(username,None,password)
             user.save()
             #登陆
             user = auth.authenticate(username=username,password=password)
