@@ -25,7 +25,7 @@ SECRET_KEY = '38%heb=356ye8hgr8rui-11+ztf8c6)p8rh))+g#q@d8p&wm3='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -154,8 +154,8 @@ CKEDITOR_UPLOAD_PATH = 'upload/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.qq.com'
-EMAIL_PORT = 25
+EMAIL_PORT = 465
 EMAIL_HOST_USER = '1021581800@qq.com'
 EMAIL_HOST_PASSWORD = 'lmxlvkihshmsbcgi'  # 授权码
 EMAIL_SUBJECT_PREFIX = '[hq的博客] '
-EMAIL_USE_TLS = True  # 与SMTP服务器通信时，是否启动TLS链接(安全链接)
+EMAIL_USE_SSL = True  # 与SMTP服务器通信时，是否启动TLS链接(安全链接)
